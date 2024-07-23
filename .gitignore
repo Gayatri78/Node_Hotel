@@ -1,0 +1,13 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore spec-ific JavaScript file
+1_callBack_funaction.js
+1_express_GET_Method.js
+2_CoreModules.js
+3_import_file.js
+3_notes.js
+4_json_object.js
+
+
+

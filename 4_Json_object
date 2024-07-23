@@ -1,0 +1,17 @@
+//convert JSON string to object
+// const jsonString='{"Name":"Gayatri", "age":21, "city":"Pune"}';
+// const jsonobject=JSON.parse(jsonString);
+//  console.log(jsonobject);
+//  console.log(jsonobject.Name);
+
+ //convert object to JSON
+
+ const objecttoconvert={
+ name:"gauri",
+ age:21,
+ city:"Nagar"
+ }
+ const json=JSON.stringify(objecttoconvert);
+ console.log(json);
+ 
+ console.log(typeof json)
