@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const db = require('./5_db'); // Import database connection
+const db = require('./db'); // Import database connection
 // Import the router files
 const menuRouters =require('./Routes/menuRoutes');
 const personRoutes =require('./Routes/personRoutes');
@@ -13,8 +13,15 @@ const PORT = process.env.PORT || 3000
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
 
+// middleware function 
+const logRequest=(req,resp,next)=>{
+    console.log(`[${new Date().toLocaleString()}] Request made to : ${req}`);
+    next();//move to next  phase(middleware phase)
+    }
+
 // Heading route
-app.get('/heading', function (req, resp) {
+app.use(logRequest);
+app.get('/', function (req, resp) {
     resp.send('Welcome to my hotel :)');
 });
 

@@ -2,12 +2,6 @@ const mongoose = require('mongoose');
 require('dotenv').config(); // Load environment variables from .env file
 
 // Define the MongoDB Connection URL
-// Local URL
-// const mongoURL = 'mongodb://localhost:27017/Hotel';
-
-// Cloud URL
-// const mongoURL = 'mongodb+srv://gayatrisadhav:Akshu@cluster0.fnnmqrh.mongodb.net/'; 
-// mongoose.connect(mongoURL);
 
 // const mongoURL = process.env.MONGODB_URL_LOCAL;
 const mongoURL = process.env.MONGODB_URL;
