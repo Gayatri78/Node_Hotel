@@ -1,27 +1,27 @@
 const express = require('express');
 const app = express();
-
-// Import database connection
-const db = require('./5_db');
-require('dotenv').config();
-
 const bodyParser = require('body-parser');
-app.use(bodyParser.json()); // req.body 
+const db = require('./5_db'); // Import database connection
+// Import the router files
+const menuRouters =require('./Routes/menuRoutes');
+const personRoutes =require('./Routes/personRoutes');
+  
+//dotenv 
+require('dotenv').config();
+const PORT = process.env.PORT || 3000
+
+// Middleware to parse JSON bodies
+app.use(bodyParser.json());
 
 // Heading route
 app.get('/heading', function (req, resp) {
     resp.send('Welcome to my hotel :)');
 });
 
-// Import the router files
-const menuRouters =require('./Routes/menuRoutes');
-const personRoutes =require('./Routes/personRoutes');
-
 //use  the routers
 app.use('/person',personRoutes);
 app.use('/menu/',menuRouters);
 
-const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log('Listening on port 3000');
 });
@@ -29,6 +29,8 @@ app.listen(PORT, () => {
 //comment add  for testing purpose for github 
 
 
+
+//example to old version how to write logic of node js (is not used bad practices)
     // const express =require ('express');
     // const app =express();
 

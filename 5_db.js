@@ -1,19 +1,23 @@
 const mongoose = require('mongoose');
+require('dotenv').config(); // Load environment variables from .env file
 
 // Define the MongoDB Connection URL
-// Replace 'mydatabase' with any database name you want
+// Local URL
+// const mongoURL = 'mongodb://localhost:27017/Hotel';
 
-// const MongoURL = 'mongodb://localhost:27017/mydatabase'; // Local URL
-// const MongoURL = 'mongodb+srv://Gayatri:AkshuDeveloper@cluster0.h8vzgcu.mongodb.net/yourDatabaseName'; // Cloud URL
+// Cloud URL
+// const mongoURL = 'mongodb+srv://gayatrisadhav:Akshu@cluster0.fnnmqrh.mongodb.net/'; 
+// mongoose.connect(mongoURL);
 
 // const mongoURL = process.env.MONGODB_URL_LOCAL;
 const mongoURL = process.env.MONGODB_URL;
-// Set the MongoDB connection
 
+// Set the MongoDB connection
 mongoose.connect(mongoURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+
 
 // Get the default connection object
 // Mongoose maintains a default connection object representing the MongoDB connection
